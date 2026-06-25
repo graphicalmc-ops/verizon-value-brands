@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reimagining Value — Verizon Value Brands | Maria — Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FAF8F4;
+    --bg-raised: #FFFFFF;
+    --ink: #15171C;
+    --ink-soft: #4A4D54;
+    --ink-faint: #8B8E94;
+    --line: #DEDAD1;
+    --line-strong: #C7C2B6;
+    --red: #C8102E;
+    --red-deep: #8E0B20;
+    --teal: #0E4B4B;
+    --teal-soft: #E4EFEC;
+    --red-tint: #FBE8E9;
+    --paper: #F1EDE4;
+    --radius: 2px;
+    --display: 'Fraunces', serif;
+    --body: 'Archivo', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit;}
+
+  ::selection{background:var(--red); color:#fff;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+
+  /* ---------- Top nav ---------- */
+  .topnav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(250,248,244,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topnav-inner{
+    max-width:1180px; margin:0 auto; padding:16px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:24px;
+  }
+  .topnav-mark{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  .topnav-links{
+    display:flex; gap:28px; font-family:var(--mono); font-size:12px;
+    letter-spacing:0.04em; text-transform:uppercase;
+    overflow-x:auto;
+  }
+  .topnav-links a{
+    text-decoration:none; color:var(--ink-faint);
+    padding-bottom:4px; border-bottom:2px solid transparent;
+    transition:color .15s, border-color .15s;
+    white-space:nowrap;
+  }
+  .topnav-links a:hover, .topnav-links a:focus-visible{
+    color:var(--ink); border-color:var(--red);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:96px 0 64px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .hero-eyebrow{
+    font-family:var(--mono); font-size:13px; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--red-deep);
+    display:flex; align-items:center; gap:10px; margin-bottom:28px;
+  }
+  .hero-eyebrow .dot{width:7px; height:7px; border-radius:50%; background:var(--red); display:inline-block;}
+  .hero h1{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(40px, 6vw, 76px);
+    line-height:1.04;
+    letter-spacing:-0.01em;
+    max-width:920px;
+    color:var(--ink);
+  }
+  .hero h1 em{
+    font-style:italic; font-weight:400; color:var(--red-deep);
+  }
+  .hero-sub{
+    margin-top:28px; max-width:620px; font-size:19px; color:var(--ink-soft);
+    font-family:var(--body);
+  }
+  .hero-meta{
+    margin-top:48px; display:grid; grid-template-columns:repeat(3,1fr);
+    gap:24px; border-top:1px solid var(--line); padding-top:28px;
+  }
+  .hero-meta .m-label{
+    font-family:var(--mono); font-size:11px; text-transform:uppercase;
+    letter-spacing:0.08em; color:var(--ink-faint); margin-bottom:8px;
+  }
+  .hero-meta .m-value{font-size:15px; color:var(--ink); font-weight:500;}
+
+  @media (max-width:760px){
+    .hero-meta{grid-template-columns:repeat(2,1fr); row-gap:28px;}
+  }
+
+  /* ---------- Section scaffolding ---------- */
+  section.block{
+    padding:88px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .block-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    gap:32px; margin-bottom:56px; flex-wrap:wrap;
+  }
+  .block-tag{
+    font-family:var(--mono); font-size:12px; text-transform:uppercase;
+    letter-spacing:0.1em; color:var(--ink-faint);
+  }
+  .block-title{
+    font-family:var(--display); font-weight:500; font-size:clamp(28px,3.6vw,42px);
+    max-width:760px; letter-spacing:-0.005em; line-height:1.12;
+  }
+  .block-deck{
+    max-width:340px; font-size:15px; color:var(--ink-soft); text-align:left;
+  }
+  @media (max-width:760px){
+    .block-deck{max-width:none;}
+  }
+
+  .prose{max-width:680px; font-size:17px; color:var(--ink-soft); line-height:1.7;}
+  .prose p + p{margin-top:18px;}
+  .prose strong{color:var(--ink); font-weight:600;}
+
+  .pull{
+    font-family:var(--display); font-style:italic; font-weight:400;
+    font-size:clamp(22px,2.6vw,30px); color:var(--teal);
+    line-height:1.3; max-width:780px; margin:36px 0;
+    padding-left:24px; border-left:3px solid var(--teal);
+  }
+
+  /* ---------- Reframe section ---------- */
+  .reframe-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:0;
+    border:1px solid var(--line); margin-top:48px;
+  }
+  .reframe-col{padding:36px 40px;}
+  .reframe-col:first-child{border-right:1px solid var(--line); background:var(--bg-raised);}
+  .reframe-col:last-child{background:var(--teal); color:#fff;}
+  .reframe-col .rc-label{
+    font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em;
+    margin-bottom:16px; display:block;
+  }
+  .reframe-col:first-child .rc-label{color:var(--ink-faint);}
+  .reframe-col:last-child .rc-label{color:#BFE0DA;}
+  .reframe-col p{font-size:16px; line-height:1.6;}
+  .reframe-col:first-child p{color:var(--ink-soft);}
+  .reframe-col:last-child p{color:#EAF4F1;}
+  @media (max-width:760px){
+    .reframe-grid{grid-template-columns:1fr;}
+    .reframe-col:first-child{border-right:none; border-bottom:1px solid var(--line);}
+  }
+
+  /* ---------- System map ---------- */
+  .system-map{
+    margin-top:48px; border:1px solid var(--line); background:var(--bg-raised);
+    padding:40px; position:relative;
+  }
+  .sys-row{display:flex; align-items:center; gap:0; flex-wrap:wrap;}
+  .sys-node{
+    flex:1; min-width:140px; text-align:center; padding:18px 14px;
+    border:1px solid var(--line-strong); background:var(--paper);
+    font-family:var(--mono); font-size:12px; letter-spacing:.03em;
+  }
+  .sys-arrow{
+    flex:0 0 auto; padding:0 14px; color:var(--ink-faint); font-size:20px;
+  }
+  .sys-center{
+    margin:36px auto 0; max-width:560px; text-align:center;
+    font-family:var(--mono); font-size:12px; letter-spacing:.06em; color:var(--red-deep);
+    text-transform:uppercase;
+  }
+  @media (max-width:760px){
+    .sys-row{flex-direction:column;}
+    .sys-arrow{transform:rotate(90deg); padding:6px 0;}
+  }
+
+  /* ---------- Constraints/opportunities ---------- */
+  .co-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:48px;}
+  .co-card{padding:32px; border:1px solid var(--line); background:var(--bg-raised);}
+  .co-card h4{
+    font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:.08em;
+    margin-bottom:20px; padding-bottom:14px; border-bottom:1px solid var(--line);
+  }
+  .co-card.constraints h4{color:var(--red-deep);}
+  .co-card.opportunities h4{color:var(--teal);}
+  .co-card ul{list-style:none;}
+  .co-card li{
+    font-size:15px; color:var(--ink-soft); padding-left:18px; position:relative;
+    margin-bottom:14px; line-height:1.55;
+  }
+  .co-card li::before{
+    content:'—'; position:absolute; left:0; color:var(--ink-faint);
+  }
+  @media (max-width:760px){.co-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Timeline / iteration ---------- */
+  .iteration-rail{position:relative; margin-top:56px;}
+  .it-item{
+    display:grid; grid-template-columns:160px 1fr; gap:32px;
+    padding:32px 0; border-top:1px solid var(--line);
+  }
+  .it-item:first-child{border-top:1px solid var(--ink);}
+  .it-phase{
+    font-family:var(--mono); font-size:12px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-faint); padding-top:4px;
+  }
+  .it-phase .it-num{
+    display:block; font-family:var(--display); font-style:italic; font-size:30px;
+    color:var(--line-strong); margin-bottom:6px; font-weight:400;
+  }
+  .it-content h4{
+    font-family:var(--body); font-weight:700; font-size:18px; margin-bottom:10px;
+  }
+  .it-content p{font-size:15.5px; color:var(--ink-soft); line-height:1.65; max-width:640px;}
+  .it-shift{
+    margin-top:14px; display:inline-flex; align-items:flex-start; gap:10px;
+    background:var(--red-tint); padding:12px 16px; border-left:2px solid var(--red);
+    max-width:600px;
+  }
+  .it-shift .lbl{
+    font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--red-deep); flex:0 0 auto; padding-top:2px;
+  }
+  .it-shift p{font-size:14.5px; color:var(--ink); margin:0;}
+  @media (max-width:760px){
+    .it-item{grid-template-columns:1fr; gap:12px;}
+  }
+
+  /* ---------- Decision ledger (signature element) ---------- */
+  .ledger{
+    margin-top:48px; border:1px solid var(--ink); background:var(--bg-raised);
+  }
+  .ledger-head{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:18px 28px; background:var(--ink); color:var(--bg);
+    font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase;
+  }
+  .ledger-head span:last-child{color:#D9D5CB;}
+  .ledger-body{display:grid; grid-template-columns:1fr 1fr; }
+  .ledger-side{padding:32px 28px;}
+  .ledger-side:first-child{border-right:1px solid var(--line);}
+  .ledger-side h5{
+    font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:16px;
+  }
+  .ledger-side p{font-size:15px; color:var(--ink-soft); line-height:1.6; margin-bottom:14px;}
+  .ledger-side.chosen{background:var(--teal-soft);}
+  .ledger-side.chosen h5{color:var(--teal);}
+  .ledger-tradeoff{
+    grid-column:1 / -1; padding:22px 28px; border-top:1px solid var(--line);
+    background:var(--paper); display:flex; gap:14px; align-items:flex-start;
+  }
+  .ledger-tradeoff .lbl{
+    font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--red-deep); flex:0 0 90px; padding-top:2px;
+  }
+  .ledger-tradeoff p{font-size:14.5px; color:var(--ink); margin:0;}
+  @media (max-width:760px){
+    .ledger-body{grid-template-columns:1fr;}
+    .ledger-side:first-child{border-right:none; border-bottom:1px solid var(--line);}
+  }
+
+  /* ---------- Prototyping strip ---------- */
+  .proto-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+    border:1px solid var(--line); margin-top:48px;
+  }
+  .proto-card{padding:30px 28px; border-right:1px solid var(--line);}
+  .proto-card:last-child{border-right:none;}
+  .proto-card .pc-fidelity{
+    font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--red-deep); margin-bottom:14px;
+  }
+  .proto-card h4{font-size:17px; font-weight:700; margin-bottom:10px;}
+  .proto-card p{font-size:14.5px; color:var(--ink-soft); line-height:1.6;}
+  @media (max-width:760px){
+    .proto-grid{grid-template-columns:1fr;}
+    .proto-card{border-right:none; border-bottom:1px solid var(--line);}
+  }
+
+  /* ---------- Stat band ---------- */
+  .stat-band{
+    margin-top:56px; display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line);
+  }
+  .stat{
+    background:var(--bg-raised); padding:32px 24px; text-align:left;
+  }
+  .stat .sv{
+    font-family:var(--display); font-weight:500; font-size:clamp(30px,4vw,44px);
+    color:var(--red); line-height:1;
+  }
+  .stat .sl{
+    margin-top:10px; font-family:var(--mono); font-size:11.5px; text-transform:uppercase;
+    letter-spacing:.05em; color:var(--ink-soft); line-height:1.4;
+  }
+  .stat .sctx{margin-top:8px; font-size:12.5px; color:var(--ink-faint);}
+  @media (max-width:760px){.stat-band{grid-template-columns:repeat(2,1fr);}}
+
+  /* ---------- Figures (images / GIFs) ---------- */
+  figure.fig{margin-top:48px;}
+  figure.fig img, figure.fig video{
+    display:block; width:100%; height:auto; border:1px solid var(--line);
+    background:var(--paper);
+  }
+  figure.fig figcaption{
+    margin-top:14px; font-family:var(--mono); font-size:12px; color:var(--ink-faint);
+    letter-spacing:.02em; display:flex; justify-content:space-between; gap:16px;
+    flex-wrap:wrap;
+  }
+  figure.fig figcaption .fc-tag{
+    color:var(--red-deep); text-transform:uppercase; letter-spacing:.06em;
+    flex:0 0 auto;
+  }
+  figure.fig.fig-wide img{aspect-ratio:16/8; object-fit:cover;}
+  figure.fig.fig-tall img{aspect-ratio:16/10; object-fit:cover;}
+  figure.fig.fig-gif img{aspect-ratio:16/9; object-fit:cover;}
+
+  .fig-grid-6{
+    margin-top:48px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
+  }
+  .fig-grid-6 figure.fig{margin-top:0;}
+  .fig-grid-6 figure.fig img{aspect-ratio:4/3; object-fit:cover;}
+  @media (max-width:760px){
+    .fig-grid-6{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:480px){
+    .fig-grid-6{grid-template-columns:1fr;}
+  }
+
+  .fig-grid-4{
+    margin-top:48px; display:grid; grid-template-columns:repeat(2,1fr); gap:16px;
+  }
+  .fig-grid-4 figure.fig{margin-top:0;}
+  .fig-grid-4 figure.fig img{aspect-ratio:3/4; object-fit:cover;}
+  @media (max-width:480px){
+    .fig-grid-4{grid-template-columns:1fr;}
+  }
+
+  .fig-stack-2{
+    margin-top:48px; display:flex; flex-direction:column; gap:20px;
+  }
+  .fig-stack-2 figure.fig{margin-top:0;}
+  .fig-stack-2 figure.fig img{aspect-ratio:16/9; object-fit:cover;}
+
+  /* ---------- Decomposition (complexity) ---------- */
+  .decomp{margin-top:48px;}
+  .decomp-row{
+    display:grid; grid-template-columns:280px 1fr; gap:32px;
+    padding:28px 0; border-top:1px solid var(--line); align-items:start;
+  }
+  .decomp-row:first-child{border-top:1px solid var(--ink);}
+  .decomp-q{font-size:17px; font-weight:600; color:var(--ink); font-family:var(--display); font-style:italic; line-height:1.4;}
+  .decomp-paths{display:flex; flex-direction:column; gap:10px;}
+  .path{
+    display:flex; gap:14px; padding:14px 16px; border:1px solid var(--line);
+    font-size:14.5px; align-items:flex-start;
+  }
+  .path.ruled-out{opacity:0.72;}
+  .path .tag{
+    font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.05em;
+    padding:3px 8px; border-radius:2px; flex:0 0 auto; margin-top:1px;
+  }
+  .path.ruled-out .tag{background:var(--red-tint); color:var(--red-deep);}
+  .path.chosen .tag{background:var(--teal-soft); color:var(--teal);}
+  .path p{color:var(--ink-soft); margin:0;}
+  @media (max-width:760px){.decomp-row{grid-template-columns:1fr;}}
+
+  /* ---------- Craft section ---------- */
+  .craft-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:56px; margin-top:48px; align-items:start;}
+  .craft-principles{display:flex; flex-direction:column; gap:0;}
+  .cp{padding:24px 0; border-top:1px solid var(--line);}
+  .cp:first-child{border-top:1px solid var(--ink);}
+  .cp .cp-num{font-family:var(--mono); font-size:11px; color:var(--ink-faint); letter-spacing:.06em;}
+  .cp h4{font-size:17px; font-weight:700; margin:8px 0 8px;}
+  .cp p{font-size:14.5px; color:var(--ink-soft); line-height:1.6; max-width:480px;}
+  .craft-token-panel{
+    border:1px solid var(--ink); background:var(--ink); color:var(--bg); padding:28px;
+    font-family:var(--mono); font-size:13px; position:sticky; top:96px;
+  }
+  .craft-token-panel .tp-head{
+    font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:#A9ADB3;
+    margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid #33363D;
+  }
+  .tp-row{display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid #262931; font-size:12.5px;}
+  .tp-row:last-child{border-bottom:none;}
+  .tp-row .tk{color:#7FB8AE;}
+  .tp-row .tv{color:#D9D5CB; text-align:right;}
+  @media (max-width:900px){
+    .craft-grid{grid-template-columns:1fr;}
+    .craft-token-panel{position:static;}
+  }
+
+  /* ---------- Outcomes recap ---------- */
+  .outcomes-final{
+    margin-top:48px; padding:48px; background:var(--ink); color:var(--bg);
+    display:grid; grid-template-columns:1fr 1.4fr; gap:48px;
+  }
+  .of-left h3{font-family:var(--display); font-weight:500; font-size:26px; line-height:1.3; max-width:320px;}
+  .of-left p{margin-top:16px; font-size:14.5px; color:#B9BCC2; max-width:320px; line-height:1.6;}
+  .of-right{display:grid; grid-template-columns:repeat(2,1fr); gap:28px;}
+  .of-stat .sv{font-family:var(--display); font-size:38px; color:#FF6B6B; font-weight:500;}
+  .of-stat .sl{margin-top:6px; font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:#9CA0A6;}
+  @media (max-width:760px){
+    .outcomes-final{grid-template-columns:1fr;}
+    .of-right{grid-template-columns:repeat(2,1fr);}
+  }
+
+  /* ---------- Reflection / closing ---------- */
+  .closing{padding:96px 0 64px;}
+  .closing-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  .closing-grid.closing-single{grid-template-columns:1fr; max-width:680px;}
+  .closing h2{
+    font-family:var(--display); font-weight:500; font-size:clamp(28px,3.6vw,40px);
+    line-height:1.18; max-width:480px;
+  }
+  .closing .prose{margin-top:24px;}
+  .closing-asset{
+    border:1px solid var(--line); padding:32px; background:var(--bg-raised);
+  }
+  .closing-asset h5{
+    font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink-faint); margin-bottom:16px;
+  }
+  .closing-asset embed{width:100%; height:480px; border:1px solid var(--line);}
+  .closing-asset .dl{
+    display:inline-flex; align-items:center; gap:8px; margin-top:16px;
+    font-family:var(--mono); font-size:12px; text-decoration:none; color:var(--red-deep);
+    border-bottom:1px solid var(--red-deep); padding-bottom:2px;
+  }
+  @media (max-width:760px){.closing-grid{grid-template-columns:1fr;}}
+
+  footer{
+    border-top:1px solid var(--line); padding:40px 0; font-family:var(--mono);
+    font-size:12px; color:var(--ink-faint); display:flex; justify-content:space-between;
+    flex-wrap:wrap; gap:12px;
+  }
+
+  .visually-hidden{position:absolute; left:-9999px;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--red); outline-offset:3px;
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <span class="topnav-mark">Verizon Value Brands — Case Study</span>
+    <div class="topnav-links">
+      <a href="#framing">Framing</a>
+      <a href="#process">Process</a>
+      <a href="#prototyping">Prototyping</a>
+      <a href="#complexity">Complexity</a>
+      <a href="#stakeholders">Alignment</a>
+      <a href="#craft">Craft</a>
+      <a href="#outcomes">Outcomes</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow"><span class="dot"></span>Lead Product Designer · Publicis Sapient × Verizon</div>
+    <h1>Seven brands.<br>One system that <em>bends</em>, not breaks.</h1>
+    <p class="hero-sub">How we rebuilt the shopping experience for Verizon's value brand portfolio — and the decision, early on, that determined whether the system would actually hold.</p>
+    <div class="hero-meta">
+      <div><div class="m-label">Role</div><div class="m-value">Lead Product Designer</div></div>
+      <div><div class="m-label">Scope</div><div class="m-value">Total Wireless, Straight Talk, Simple Mobile +4</div></div>
+      <div><div class="m-label">Partners</div><div class="m-value">Eng leads, Product, Brand, Verizon stakeholders</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- 1. PROBLEM FRAMING -->
+<section class="block" id="framing">
+  <div class="wrap">
+    <div class="block-head">
+      <div>
+        <div class="block-tag">01 — Problem framing</div>
+        <h2 class="block-title">The brief said "redesign the storefronts." That wasn't the real problem.</h2>
+      </div>
+      <div class="block-deck">The brief I was handed and the brief I ended up solving were not the same document.</div>
+    </div>
+
+    <figure class="fig fig-wide" style="margin-bottom:56px;">
+      <img src="./images/01-framing-brief-comparison.png" alt="Comparison of the original per-brand brief versus the reframed systems brief">
+    </figure>
+
+    <div class="prose">
+      <p>Verizon's prepaid portfolio — Total Wireless, Straight Talk, Simple Mobile, and four other value brands — had grown by acquisition. Each one had its own commerce stack, its own component library, its own conventions for something as basic as a plan card. The original ask from the account was scoped per-brand: improve Total Wireless's PDP, then look at Straight Talk's cart, and so on, as separate engagements.</p>
+      <p>I pushed back on that framing in the first week. Treating seven brands as seven unrelated redesigns meant seven times the design debt, seven different answers to the same UX question, and no way to ship a fix once and have it propagate. The actual problem wasn't "these storefronts feel dated." It was <strong>"this portfolio has no shared infrastructure for experience,"</strong> which is a systems problem, not a page-by-page one.</p>
+    </div>
+
+    <div class="pull">"If I designed seven storefronts, I'd ship seven roadmaps. If I designed one system, I'd ship one decision — seven times, fast."</div>
+
+    <div class="reframe-grid">
+      <div class="reframe-col">
+        <span class="rc-label">Brief as written</span>
+        <p>"Redesign the Total Wireless shop experience to improve conversion. Other brands may follow depending on results."</p>
+      </div>
+      <div class="reframe-col">
+        <span class="rc-label">Brief as I reframed it to leadership</span>
+        <p>"Build one white-label experience system that ships brand-correct storefronts for all seven brands from shared components — so improving Total Wireless and improving Straight Talk become the same engineering and design effort."</p>
+      </div>
+    </div>
+
+    <div class="system-map">
+      <div class="sys-row">
+        <div class="sys-node">Fragmented brand stacks</div>
+        <div class="sys-arrow">→</div>
+        <div class="sys-node">Shared component layer + brand tokens</div>
+        <div class="sys-arrow">→</div>
+        <div class="sys-node">7 brand-correct storefronts, 1 system to maintain</div>
+      </div>
+      <div class="sys-center">The system, not the screen, was the deliverable</div>
+    </div>
+
+    <div class="co-grid">
+      <div class="co-card constraints">
+        <h4>Constraints I had to design inside</h4>
+        <ul>
+          <li>Each brand carries distinct legal, pricing, and promo language that can't be templated away — regulatory copy differs by carrier sub-brand.</li>
+          <li>Engineering capacity was fixed; this had to ship faster than seven separate redesigns, not slower.</li>
+          <li>Brand teams each had their own stakeholders who needed to see their identity respected, not flattened into a "Verizon look."</li>
+          <li>No single source of truth existed yet for what "on-brand" meant per brand beyond a logo and a hex code.</li>
+        </ul>
+      </div>
+      <div class="co-card opportunities">
+        <h4>Opportunities the reframe unlocked</h4>
+        <ul>
+          <li>A fix proven on one brand could de-risk the rollout for the other six — testing got cheaper, not more expensive, as we added brands.</li>
+          <li>Shared components meant UX research insight became portfolio-wide, not brand-locked.</li>
+          <li>A documented system gave Verizon a long-term asset, not just a one-time redesign — durable beyond our engagement.</li>
+        </ul>
+      </div>
+    </div>
+
+    <figure class="fig fig-tall">
+      <img src="./images/02-framing-system-map-detail.png" alt="Detail view of the portfolio system map showing fragmented brand stacks unifying into one component layer">
+    </figure>
+  </div>
+</section>
+
+<!-- 2. PROCESS & ITERATION -->
+<section class="block" id="process">
+  <div class="wrap">
+    <div class="block-head">
+      <div>
+        <div class="block-tag">02 — Process & iteration</div>
+        <h2 class="block-title">The path bent twice. Both bends mattered more than the plan.</h2>
+      </div>
+      <div class="block-deck">Insight-driven, not template-driven — each phase exists because the last one taught us something.</div>
+    </div>
+
+    <div class="iteration-rail">
+      <div class="it-item">
+        <div class="it-phase"><span class="it-num">01</span>Audit</div>
+        <div class="it-content">
+          <h4>Mapped every brand's PLP, PDP, plan grid, and checkout side by side</h4>
+          <p>Not to find visual inconsistency — that was obvious — but to find which differences were <em>intentional brand decisions</em> versus <em>accidental drift</em> from no one owning the pattern. That distinction became the filter for everything after.</p>
+        </div>
+      </div>
+
+      <div class="it-item">
+        <div class="it-phase"><span class="it-num">02</span>First system pass</div>
+        <div class="it-content">
+          <h4>Designed a single "neutral" component set, themed only by color swap</h4>
+          <p>The first version of the design system treated brand difference as skin-deep: same layout, same spacing, same interaction, different palette. It was the fastest path to a shippable system and engineering liked it for that reason.</p>
+          <div class="it-shift">
+            <span class="lbl">What shifted it</span>
+            <p>Usability sessions on the Straight Talk plan grid showed customers anchoring on density and badge hierarchy differently than Total Wireless customers did — the "neutral" layout actually under-served both. Brand wasn't just color. It was information priority.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="it-item">
+        <div class="it-phase"><span class="it-num">03</span>Token-based rebuild</div>
+        <div class="it-content">
+          <h4>Rebuilt components so layout, spacing, and even badge logic could be governed by appearance tokens — not just color</h4>
+          <p>This is the version that shipped: one component, any brand, where "brand expression" could touch more than a swatch — see the decision ledger below for how this got contested and resolved with engineering.</p>
+          <div class="it-shift">
+            <span class="lbl">What shifted it</span>
+            <p>Once live, the gridwall engagement data made the cost of the rebuild legible — it wasn't an aesthetic preference, it was a measurable lift, which is what eventually got the heavier token system fully adopted, not just tolerated.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <figure class="fig fig-gif">
+      <img src="./images/03-process-token-rebuild.gif" alt="Animated walkthrough of the component rebuild from color-only theming to full token-governed appearance settings">
+    </figure>
+  </div>
+</section>
+
+<!-- 3. PROTOTYPING -->
+<section class="block" id="prototyping">
+  <div class="wrap">
+    <div class="block-head">
+      <div>
+        <div class="block-tag">03 — Prototyping & communication</div>
+        <h2 class="block-title">Prototypes were how we argued, not just how we presented.</h2>
+      </div>
+      <div class="block-deck">Each fidelity level existed to answer a specific open question — not to look finished.</div>
+    </div>
+
+    <div class="proto-grid">
+      <div class="proto-card">
+        <div class="pc-fidelity">Low-fi — structure</div>
+        <h4>Grayscale component maps</h4>
+        <p>Used internally with engineering before any brand color touched the screen, specifically to separate "does this layout work" conversations from "does this look right" conversations, which kept critique sessions from collapsing into color debates.</p>
+      </div>
+      <div class="proto-card">
+        <div class="pc-fidelity">Mid-fi — flow</div>
+        <h4>Clickable PDP decision flow</h4>
+        <p>Used in stakeholder reviews to simulate the device → plan → offer sequence end to end. This is what surfaced that customers were losing the pricing anchor once they reached storage/color options — directly shaped the "anchored pricing" pattern that shipped.</p>
+      </div>
+      <div class="proto-card">
+        <div class="pc-fidelity">Hi-fi — brand proof</div>
+        <h4>Token-swapped brand triplets</h4>
+        <p>The same screen rendered three ways (Total, Straight Talk, Simple Mobile) side by side. This was the artifact that finally got engineering and brand stakeholders looking at the same evidence instead of arguing in the abstract.</p>
+      </div>
+    </div>
+
+    <div class="pull">"The hi-fi triplet wasn't a deliverable. It was the argument, made visible — three brands on one screen, so nobody had to imagine what flexible meant."</div>
+
+    <figure class="fig fig-gif">
+      <img src="./images/04-prototyping-clickable-flow.gif" alt="Animated capture of the clickable PDP decision flow prototype moving through device, plan, and offer selection">
+    </figure>
+  </div>
+</section>
+
+<!-- 4. COMPLEXITY -->
+<section class="block" id="complexity">
+  <div class="wrap">
+    <div class="block-head">
+      <div>
+        <div class="block-tag">04 — Navigating complexity</div>
+        <h2 class="block-title">The hardest problem wasn't a screen. It was where brand identity should live in the system.</h2>
+      </div>
+      <div class="block-deck">Breaking one ambiguous, portfolio-wide question into decidable parts.</div>
+    </div>
+
+    <div class="prose">
+      <p>"Make it feel like each brand" is not a design spec — it's a direction. To make it decidable, I broke it into three separate questions that could each be answered with evidence rather than opinion, instead of treating "brand fidelity" as one big subjective judgment call.</p>
+    </div>
+
+    <div class="decomp">
+      <div class="decomp-row">
+        <div class="decomp-q">Where does brand live: layout, color, or both?</div>
+        <div class="decomp-paths">
+          <div class="path ruled-out"><span class="tag">Ruled out</span><p>Color-only theming — fastest to build, but usability testing showed it didn't carry real brand distinction for customers, only for stakeholders looking at swatches.</p></div>
+          <div class="path chosen"><span class="tag">Chosen</span><p>Color + spacing + information density as brand-governed tokens, with interaction and behavior held constant across brands.</p></div>
+        </div>
+      </div>
+      <div class="decomp-row">
+        <div class="decomp-q">How much should brand teams customize vs. inherit?</div>
+        <div class="decomp-paths">
+          <div class="path ruled-out"><span class="tag">Ruled out</span><p>Letting each brand team override components freely — this was the fastest path back to the original fragmentation, just with extra steps.</p></div>
+          <div class="path chosen"><span class="tag">Chosen</span><p>Brand teams control tokens (appearance settings); core layout, behavior, and accessibility patterns stay locked at the system level.</p></div>
+        </div>
+      </div>
+      <div class="decomp-row">
+        <div class="decomp-q">What ships first to prove the model works?</div>
+        <div class="decomp-paths">
+          <div class="path ruled-out"><span class="tag">Ruled out</span><p>Launching all seven brands simultaneously — too much risk surface to isolate what was working from what wasn't.</p></div>
+          <div class="path chosen"><span class="tag">Chosen</span><p>Total Wireless first, instrumented closely, used as the evidence base to bring the remaining six brands along with less debate.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-band">
+      <div class="stat">
+        <div class="sv">+539<span style="font-size:0.5em;">bps</span></div>
+        <div class="sl">Device gridwall engagement</div>
+        <div class="sctx">vs. business-as-usual baseline</div>
+      </div>
+      <div class="stat">
+        <div class="sv">+14.3<span style="font-size:0.5em;">%</span></div>
+        <div class="sl">Add-to-cart rate, PDP</div>
+        <div class="sctx">After anchored-pricing pattern shipped</div>
+      </div>
+      <div class="stat">
+        <div class="sv">+872<span style="font-size:0.5em;">bps</span></div>
+        <div class="sl">Cart conversion rate</div>
+        <div class="sctx">Progressive checkout disclosure</div>
+      </div>
+      <div class="stat">
+        <div class="sv">25–50<span style="font-size:0.5em;">%</span></div>
+        <div class="sl">Faster speed to market</div>
+        <div class="sctx">Per-brand rollout, post-system</div>
+      </div>
+    </div>
+
+    <figure class="fig fig-wide">
+      <img src="./images/05-complexity-decision-paths.png" alt="Whiteboard or documentation view of the three decomposed questions and the paths considered for each">
+    </figure>
+  </div>
+</section>
+
+<!-- 5. STAKEHOLDER NAVIGATION -->
+<section class="block" id="stakeholders">
+  <div class="wrap">
+    <div class="block-head">
+      <div>
+        <div class="block-tag">05 — Stakeholder navigation</div>
+        <h2 class="block-title">Engineering wanted one component, period. I needed one component that could disagree with itself, by brand.</h2>
+      </div>
+      <div class="block-deck">A real disagreement, resolved with evidence and shared cost — not authority.</div>
+    </div>
+
+    <div class="prose">
+      <p>Midway through the system build, engineering leadership proposed reusing components 1:1 across brands — same layout, same spacing, color swap only — to hit the speed-to-market target everyone had committed to. It was a reasonable position: less variable management, fewer QA paths, a simpler mental model for the whole team.</p>
+      <p>I disagreed, but I didn't have the authority to simply override it, and a flat "no" wasn't going to move a team that had its own delivery commitments. So I treated it as a question we could both get evidence on rather than a position to win.</p>
+    </div>
+
+    <div class="ledger">
+      <div class="ledger-head">
+        <span>Decision: how much should brand identity flex inside shared components?</span>
+        <span>Resolved with eng + product + brand leads</span>
+      </div>
+      <div class="ledger-body">
+        <div class="ledger-side">
+          <h5>Engineering's position — 1:1 reuse</h5>
+          <p>One layout, one spacing system, color-only theming. Lower build cost, simpler QA matrix, faster to the speed-to-market number we'd all committed to.</p>
+          <p>Real risk: usability data I'd already gathered showed customers reading badge hierarchy and density differently by brand — this approach would ship a system that looked branded but didn't behave brand-correct.</p>
+        </div>
+        <div class="ledger-side chosen">
+          <h5>What we aligned on — token-governed flexibility</h5>
+          <p>I brought the usability findings, not an aesthetic argument — showed where the "neutral" layout was actually costing engagement on specific brands, using the same prototype triplets from the process above.</p>
+          <p>We agreed to scope flexibility narrowly: tokens could govern spacing, density, and badge logic, but interaction and accessibility patterns stayed fixed. That kept engineering's QA matrix close to their original estimate.</p>
+        </div>
+      </div>
+      <div class="ledger-tradeoff">
+        <span class="lbl">Trade-off owned</span>
+        <p>This cost more upfront — more variables to define, more documentation, a heavier component API than the 1:1 proposal. I owned that cost explicitly with engineering leadership rather than minimizing it, and we agreed to timebox the token-definition work so it had a hard ceiling instead of becoming open-ended scope.</p>
+      </div>
+    </div>
+
+    <div class="prose" style="margin-top:36px;">
+      <p>What made this resolvable wasn't seniority — it was bringing engineering into the same evidence I was using, early enough that the conversation was "how do we scope this together" instead of "design wants more, engineering wants less." The gridwall engagement lift after launch became the retroactive proof that the heavier model was worth the build cost, but the alignment itself happened before we had that data, on the strength of the usability findings alone.</p>
+    </div>
+
+    <div class="fig-grid-4">
+      <figure class="fig">
+        <img src="./images/06-stakeholders-grid-01.png" alt="Total Wireless plan card rendered with token-governed appearance settings">
+      </figure>
+      <figure class="fig">
+        <img src="./images/06-stakeholders-grid-02.png" alt="Straight Talk plan card rendered with token-governed appearance settings">
+      </figure>
+      <figure class="fig">
+        <img src="./images/06-stakeholders-grid-03.png" alt="Simple Mobile plan card rendered with token-governed appearance settings">
+      </figure>
+      <figure class="fig">
+        <img src="./images/06-stakeholders-grid-04.png" alt="Figma component appearance settings panel showing brand token controls">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CRAFT -->
+<section class="block" id="craft">
+  <div class="wrap">
+    <div class="block-head">
+      <div>
+        <div class="block-tag">06 — Craft & design judgment</div>
+        <h2 class="block-title">Quality, here, meant the system held up under pressure it didn't ask for.</h2>
+      </div>
+      <div class="block-deck">What "craft" means on a multi-brand system — and where I chose speed over polish on purpose.</div>
+    </div>
+
+    <div class="craft-grid">
+      <div class="craft-principles">
+        <div class="cp">
+          <div class="cp-num">A</div>
+          <h4>Craft is what survives the seventh brand, not how the first one looks</h4>
+          <p>A beautiful Total Wireless screen that breaks when Simple Mobile's longer legal copy hits it isn't high craft — it's a one-brand demo. I treated every component as not-done until it had been stress-tested against the brand with the most extreme content: longest copy, most promo badges, densest plan grid.</p>
+        </div>
+        <div class="cp">
+          <div class="cp-num">B</div>
+          <h4>The design system was a discipline, not a library</h4>
+          <p>Components carried a strict rule: zero hardcoded values, everything bound to a token. That constraint was inconvenient in the moment — every new pattern had to earn its way into the token set rather than getting a one-off fix — but it's the only reason the system scaled to seven brands without seven divergent codebases.</p>
+        </div>
+        <div class="cp">
+          <div class="cp-num">C</div>
+          <h4>Where I deliberately chose speed over polish</h4>
+          <p>The CAI assistant panel shipped with a simpler visual treatment than the rest of the system — it was explicitly framed internally as an experimental surface, and polishing it further would have taken time away from hardening the checkout flow, where the conversion stakes were higher. Not every surface deserves equal craft investment; matching effort to stakes is itself a craft decision.</p>
+        </div>
+      </div>
+
+      <div class="craft-token-panel">
+        <div class="tp-head">Component appearance tokens — excerpt</div>
+        <div class="tp-row"><span class="tk">brand</span><span class="tv">total-wireless</span></div>
+        <div class="tp-row"><span class="tk">vds-plan-card/border-color</span><span class="tv">[ORG] 00-brand</span></div>
+        <div class="tp-row"><span class="tk">vds-plan-card/density</span><span class="tv">compact</span></div>
+        <div class="tp-row"><span class="tk">vds-badge/priority-order</span><span class="tv">price → data → perk</span></div>
+        <div class="tp-row"><span class="tk">vds-cta/radius</span><span class="tv">locked, system-wide</span></div>
+        <div class="tp-row"><span class="tk">vds-cta/behavior</span><span class="tv">locked, system-wide</span></div>
+        <div class="tp-row"><span class="tk">hardcoded-hex-allowed</span><span class="tv">false</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section class="block" id="outcomes" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="block-head">
+      <div>
+        <div class="block-tag">Outcomes</div>
+        <h2 class="block-title">The system shipped. The harder proof is that it kept shipping.</h2>
+      </div>
+      <div class="block-deck">Figures reflect directional impact vs. business-as-usual.</div>
+    </div>
+
+    <div class="outcomes-final">
+      <div class="of-left">
+        <h3>One system, three live brands, four more on the roadmap behind it.</h3>
+        <p>The token-governed approach — the one that cost more to build and was the center of the engineering disagreement — is what let Total Wireless, Straight Talk, and Simple Mobile launch on the same system without becoming three separate maintenance burdens.</p>
+      </div>
+      <div class="of-right">
+        <div class="of-stat"><div class="sv">+75%</div><div class="sl">Add-to-cart</div></div>
+        <div class="of-stat"><div class="sv">+23%</div><div class="sl">Order conversion</div></div>
+        <div class="of-stat"><div class="sv">+13.21%</div><div class="sl">Total orders</div></div>
+        <div class="of-stat"><div class="sv">25–50%</div><div class="sl">Faster speed to market</div></div>
+      </div>
+    </div>
+
+    <div class="fig-stack-2">
+      <figure class="fig">
+        <img src="./images/07-outcomes-final-01.png" alt="Final shipped storefront experience across the three live brands, shown side by side">
+      </figure>
+      <figure class="fig">
+        <img src="./images/07-outcomes-final-02.png" alt="Dashboard or summary view of the measured outcomes across brands post-launch">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="wrap">
+    <div class="closing-grid closing-single">
+      <div>
+        <h2>What I'd take into the next system</h2>
+        <div class="prose">
+          <p>The biggest lesson wasn't about components — it was about when to introduce evidence into a disagreement. Bringing engineering the usability data <em>before</em> asking them to accept more scope changed the conversation from a negotiation into a shared problem. That's the move I'd repeat first on any multi-stakeholder system.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; width:100%;">
+    <span>Verizon Value Brands — Case Study</span>
+  </div>
+</footer>
+
+</body>
+</html>
